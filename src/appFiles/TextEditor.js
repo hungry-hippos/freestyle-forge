@@ -99,8 +99,20 @@ const getRhymesFromAPI=(word)=>{
             return rhymes;
         })
         .then((res)=>{
+
+            //empty rhymes data from previous request
+            const col2=document.getElementById('rhymesDisplayCol2');
+            col2.textContent="";
             const col1=document.getElementById('rhymesDisplayCol1');
             col1.textContent="";
+
+            //if no matches found, display shruggy dude
+            if (res.length===0){
+                document.getElementById('rhymesDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+
+            //else, display all rhymes in two cols of 5
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -110,8 +122,7 @@ const getRhymesFromAPI=(word)=>{
                 rhymeData.textContent=res[i];
                 col1.appendChild(rhymeData);
             }
-            const col2=document.getElementById('rhymesDisplayCol2');
-            col2.textContent="";
+            
             for (var i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -120,8 +131,7 @@ const getRhymesFromAPI=(word)=>{
                 rhymeData.classList.add('wordData');
                 rhymeData.textContent=res[i];
                 col2.appendChild(rhymeData);
-            }
-            
+            }   
         });
 }
 const getSpelledLikeFromAPI=(word)=>{
@@ -135,8 +145,17 @@ const getSpelledLikeFromAPI=(word)=>{
             return sp;
         })
         .then((res)=>{
+
             const col1=document.getElementById('spelledLikeDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('spelledLikeDisplayCol2');
+            col2.textContent="";
+
+            if (res.length===0){
+                document.getElementById('spelledLikeDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+            
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -146,8 +165,7 @@ const getSpelledLikeFromAPI=(word)=>{
                 rhymeData.textContent=res[i];
                 col1.appendChild(rhymeData);
             }
-            const col2=document.getElementById('spelledLikeDisplayCol2');
-            col2.textContent="";
+            
             for (var i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -170,8 +188,16 @@ const getSoundsLikeFromAPI=(word)=>{
             return sl;
         })
         .then((res)=>{
+
             const col1=document.getElementById('soundsLikeDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('soundsLikeDisplayCol2');
+            col2.textContent="";
+            if (res.length===0){
+                document.getElementById('soundsLikeDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -181,8 +207,7 @@ const getSoundsLikeFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('soundsLikeDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -205,8 +230,17 @@ const getRelatedFromAPI=(word)=>{
             return data;
         })
         .then((res)=>{
+
             const col1=document.getElementById('relatedDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('relatedDisplayCol2');
+            col2.textContent="";
+
+            if (res.length===0){
+                document.getElementById('relatedDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+            
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -216,8 +250,7 @@ const getRelatedFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('relatedDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -240,8 +273,17 @@ const getSynonymsFromAPI=(word)=>{
             return data;
         })
         .then((res)=>{
+
             const col1=document.getElementById('synonymsDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('synonymsDisplayCol2');
+            col2.textContent="";
+
+            if (res.length===0){
+                document.getElementById('synonymsDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+            
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -251,8 +293,7 @@ const getSynonymsFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('synonymsDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -275,8 +316,17 @@ const getAntonymsFromAPI=(word)=>{
             return data;
         })
         .then((res)=>{
+
             const col1=document.getElementById('antonymsDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('antonymsDisplayCol2');
+            col2.textContent="";
+
+            if (res.length===0){
+                document.getElementById('antonymsDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -286,8 +336,7 @@ const getAntonymsFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('antonymsDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -310,8 +359,17 @@ const getApproxRhymesFromAPI=(word)=>{
             return data;
         })
         .then((res)=>{
+
             const col1=document.getElementById('approxRhymesDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('approxRhymesDisplayCol2');
+            col2.textContent="";
+
+            if (res.length===0){
+                document.getElementById('approxRhymesDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+            
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -321,8 +379,7 @@ const getApproxRhymesFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('approxRhymesDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -345,8 +402,17 @@ const getConsonantMatchFromAPI=(word)=>{
             return data;
         })
         .then((res)=>{
+
             const col1=document.getElementById('consonantMatchDisplayCol1');
             col1.textContent="";
+            const col2=document.getElementById('consonantMatchDisplayCol2');
+            col2.textContent="";
+            
+            if (res.length===0){
+                document.getElementById('consonantMatchDisplayNoMatches').classList.remove('hidden');
+                return;
+            }
+            
             for (let i=0;i<5;i++){
                 if (i===res.length)
                     break;
@@ -356,8 +422,7 @@ const getConsonantMatchFromAPI=(word)=>{
                 wordData.textContent=res[i];
                 col1.appendChild(wordData);
             }
-            const col2=document.getElementById('consonantMatchDisplayCol2');
-            col2.textContent="";
+            
             for (let i=5;i<10;i++){
                 if (i>=res.length)
                     break;
@@ -370,10 +435,16 @@ const getConsonantMatchFromAPI=(word)=>{
         });
 }
 
-
+const hideAllShruggers=()=>{
+    const allShruggers=document.getElementsByClassName('noMatches');
+    for (var i=0;i<allShruggers.length;i++){
+        allShruggers[i].classList.add('hidden');
+    }
+}
 
 const getWordAndSendAPIReq=(event)=>{
     const word=event.target.textContent;
+    hideAllShruggers();
     getRhymesFromAPI(word);
     getSpelledLikeFromAPI(word);
     getSoundsLikeFromAPI(word);
@@ -384,6 +455,7 @@ const getWordAndSendAPIReq=(event)=>{
     getConsonantMatchFromAPI(word);
 }
 const sendAPIReq=(word)=>{
+    hideAllShruggers();
     getRhymesFromAPI(word);
     getSpelledLikeFromAPI(word);
     getSoundsLikeFromAPI(word);
