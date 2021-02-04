@@ -1,6 +1,48 @@
-#rhymesHolder{width:500px;
-height:200px;
-margin:50px auto;
+#HUD{display: flex;
+margin:0 auto;
+width:1200px;
+height:240px;
+box-sizing: border-box;
+background-color: rgb(192, 181, 181);
+font-family: 'Exo 2', sans-serif;
+position:sticky;
+top:0;
+}
+
+.HUDSection{width:350px;
+height:180px;
+margin:10px 20px;
 box-sizing: border-box;
 background-color: aquamarine;
+padding:3px 10px;
+box-shadow: 0 0 5px black;
 }
+
+.sectionTitle{font-size:30px;
+font-weight: 500;
+letter-spacing:1px;
+margin:0 auto;
+text-align: left;
+display:block;
+border-bottom:2px solid black;
+}
+
+.displayCol{display: block;
+width: 140px;
+margin: 10px 10px 0 0;
+font-size: 15px;
+float:left;
+}
+
+#btnsBar{box-sizing: border-box;
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:40px;
+padding:0 20px;
+}
+.optionsBtn{margin-right:34px;}
+.clickedBtn{background-color: black !important;}
+
+.hidden{display:none}

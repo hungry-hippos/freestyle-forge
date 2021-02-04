@@ -38,10 +38,22 @@ const keyboardFuncitonality=()=>{
 
             //safety measure for long pressing spaceBar
             const words=document.getElementsByClassName('word');
-            const lastWordText=words[words.length-1].textContent;
+            var lastWordText=words[words.length-1].textContent;
             if (lastWordText===""){
                 return;
             }
+            const lastChar=lastWordText[lastWordText.length-1];
+            console.log(lastChar);
+            switch(lastChar){
+                case '.':case ',':case ":":case ";":case "!":
+                    lastWordText=lastWordText.slice(0,-1);
+                    break;
+                default:
+                    break;
+            }
+
+            //fetch data from last typed word
+            sendAPIReq(lastWordText);
 
             const word=document.createElement('div');
             word.classList.add('word');
@@ -81,24 +93,305 @@ const getRhymesFromAPI=(word)=>{
     fetch("https://api.datamuse.com/words?rel_rhy="+word)
         .then(res=>res.json())
         .then((res)=>{
-            for (var i=0;i<res.length;i++){
+            for (let i=0;i<res.length;i++){
                 rhymes.push(res[i].word);
             }
             return rhymes;
         })
         .then((res)=>{
-            const rhymesDisplay=document.getElementById('rhymesDisplay');
-            var rhymes="";
-            for (var i=0;i<res.length;i++){
-                rhymes+=res[i]+" ";
+            const col1=document.getElementById('rhymesDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const rhymeData=document.createElement('div');
+                rhymeData.classList.add('wordData');
+                rhymeData.textContent=res[i];
+                col1.appendChild(rhymeData);
             }
-            rhymesDisplay.textContent=rhymes;
+            const col2=document.getElementById('rhymesDisplayCol2');
+            col2.textContent="";
+            for (var i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const rhymeData=document.createElement('div');
+                rhymeData.classList.add('wordData');
+                rhymeData.textContent=res[i];
+                col2.appendChild(rhymeData);
+            }
+            
         });
 }
+const getSpelledLikeFromAPI=(word)=>{
+    var sp=[];
+    fetch("https://api.datamuse.com/words?sp="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (let i=0;i<res.length;i++){
+                sp.push(res[i].word);
+            }
+            return sp;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('spelledLikeDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const rhymeData=document.createElement('div');
+                rhymeData.classList.add('wordData');
+                rhymeData.textContent=res[i];
+                col1.appendChild(rhymeData);
+            }
+            const col2=document.getElementById('spelledLikeDisplayCol2');
+            col2.textContent="";
+            for (var i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const rhymeData=document.createElement('div');
+                rhymeData.classList.add('wordData');
+                rhymeData.textContent=res[i];
+                col2.appendChild(rhymeData);
+            }
+        });
+}
+const getSoundsLikeFromAPI=(word)=>{
+    var sl=[];
+    fetch("https://api.datamuse.com/words?sl="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                sl.push(res[i].word);
+            }
+            return sl;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('soundsLikeDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('soundsLikeDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+const getRelatedFromAPI=(word)=>{
+    var data=[];
+    fetch("https://api.datamuse.com/words?ml="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                data.push(res[i].word);
+            }
+            return data;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('relatedDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('relatedDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+const getSynonymsFromAPI=(word)=>{
+    var data=[];
+    fetch("https://api.datamuse.com/words?rel_syn="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                data.push(res[i].word);
+            }
+            return data;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('synonymsDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('synonymsDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+const getAntonymsFromAPI=(word)=>{
+    var data=[];
+    fetch("https://api.datamuse.com/words?rel_ant="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                data.push(res[i].word);
+            }
+            return data;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('antonymsDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('antonymsDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+const getApproxRhymesFromAPI=(word)=>{
+    var data=[];
+    fetch("https://api.datamuse.com/words?rel_nry="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                data.push(res[i].word);
+            }
+            return data;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('approxRhymesDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('approxRhymesDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+const getConsonantMatchFromAPI=(word)=>{
+    var data=[];
+    fetch("https://api.datamuse.com/words?rel_cns="+word)
+        .then(res=>res.json())
+        .then((res)=>{
+            for (var i=0;i<res.length;i++){
+                data.push(res[i].word);
+            }
+            return data;
+        })
+        .then((res)=>{
+            const col1=document.getElementById('consonantMatchDisplayCol1');
+            col1.textContent="";
+            for (let i=0;i<5;i++){
+                if (i===res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col1.appendChild(wordData);
+            }
+            const col2=document.getElementById('consonantMatchDisplayCol2');
+            col2.textContent="";
+            for (let i=5;i<10;i++){
+                if (i>=res.length)
+                    break;
+
+                const wordData=document.createElement('div');
+                wordData.classList.add('wordData');
+                wordData.textContent=res[i];
+                col2.appendChild(wordData);
+            }
+        });
+}
+
+
+
 const getWordAndSendAPIReq=(event)=>{
     const word=event.target.textContent;
     getRhymesFromAPI(word);
-    console.log('request called');
+    getSpelledLikeFromAPI(word);
+    getSoundsLikeFromAPI(word);
+    getRelatedFromAPI(word);
+    getSynonymsFromAPI(word);
+    getAntonymsFromAPI(word);
+    getApproxRhymesFromAPI(word);
+    getConsonantMatchFromAPI(word);
+}
+const sendAPIReq=(word)=>{
+    getRhymesFromAPI(word);
+    getSpelledLikeFromAPI(word);
+    getSoundsLikeFromAPI(word);
+    getRelatedFromAPI(word);
+    getSynonymsFromAPI(word);
+    getAntonymsFromAPI(word);
+    getApproxRhymesFromAPI(word);
+    getConsonantMatchFromAPI(word);
 }
 
 const TextEditor=()=>{
