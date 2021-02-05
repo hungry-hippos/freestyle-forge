@@ -29,7 +29,7 @@ const keyboardFuncitonality=()=>{
             word.classList.add('word');
             word.addEventListener('mouseenter',getWordAndSendAPIReq);
             line.appendChild(word);
-            document.getElementById('textEditorMain').appendChild(line);
+            document.getElementById('pageBody').appendChild(line);
             return;
         }
         //if key===space, create new word div, append it to last line
@@ -75,6 +75,11 @@ const keyboardFuncitonality=()=>{
 
             if (reducedWord==="" && words.length!==1){
                 lastWord.remove();
+                var allLines=document.getElementsByClassName('verseLine');
+                const lastLineChildren=allLines[allLines.length-1].childNodes;
+                if (allLines.length>1 && lastLineChildren.length===0){
+                    allLines[allLines.length-1].remove();
+                }
             }else{
                 lastWord.textContent=reducedWord;
             }
@@ -407,7 +412,7 @@ const getConsonantMatchFromAPI=(word)=>{
             col1.textContent="";
             const col2=document.getElementById('consonantMatchDisplayCol2');
             col2.textContent="";
-            
+
             if (res.length===0){
                 document.getElementById('consonantMatchDisplayNoMatches').classList.remove('hidden');
                 return;
@@ -443,6 +448,12 @@ const hideAllShruggers=()=>{
 }
 
 const getWordAndSendAPIReq=(event)=>{
+
+    event.target.classList.add('italic');
+    event.target.addEventListener('mouseleave',(event)=>{
+        event.target.classList.remove('italic');
+    })
+
     const word=event.target.textContent;
     hideAllShruggers();
     getRhymesFromAPI(word);
@@ -473,8 +484,10 @@ const TextEditor=()=>{
         
     })
     return <div id='textEditorMain'>
-        <div className='verseLine'>
-            <div className='word'></div>
+        <div id='pageBody'>
+            <div className='verseLine'>
+                <div className='word'></div>
+            </div>
         </div>
     </div>
 }

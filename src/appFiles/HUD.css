@@ -8,8 +8,9 @@ font-family: 'Exo 2', sans-serif;
 position:sticky;
 top:0;
 transition:1s;
+box-shadow: 0 0 5px black;
 }
-.up{top:-200px !important;}
+.up{top:-195px !important;}
 
 .HUDSection{width:350px;
 height:180px;
