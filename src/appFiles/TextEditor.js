@@ -484,6 +484,12 @@ const TextEditor=()=>{
         
     })
     return <div id='textEditorMain'>
+        <div id='instructions'>
+            <span style={{fontWeight:'bold',display:'block',fontSize:'25px'}}>INSTRUCTIONS</span>
+            1. Select up to 3 rhyming options from the options bar above. <br/>
+            2. Every time you hit the spacebar, rhymes are shown for the last typed word. <br/>
+            3. Hover your mouse over any word you've typed to get its rhymes.
+        </div>
         <div id='pageBody'>
             <div className='verseLine'>
                 <div className='word'></div>
