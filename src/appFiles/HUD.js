@@ -16,12 +16,16 @@ const chooseMode=(mode)=>{
     document.getElementById(mode).classList.toggle('clickedBtn');
     const displayId=mode+"Display";
     document.getElementById(displayId).classList.toggle('hidden');
+
+    document.getElementById(mode).blur();
 }
 
 const toggleHUD=()=>{
+
     document.getElementById('upArrow').classList.toggle('hidden');
     document.getElementById('downArrow').classList.toggle('hidden');
     document.getElementById('HUD').classList.toggle('up');
+    document.getElementById('rollHUDBtn').blur();
 }
 
 const NoMatches=(props)=>{

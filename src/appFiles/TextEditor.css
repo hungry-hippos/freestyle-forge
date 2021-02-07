@@ -26,6 +26,7 @@ box-sizing: border-box;
 margin:1px 0;
 border:thin solid black;
 background-color: #f9f9b0;
+overflow:hidden;
 }
 .word{display: inline;
 font-size:30px;
