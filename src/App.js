@@ -3,6 +3,7 @@ import TextEditor from './appFiles/TextEditor.js'
 import HUD from './appFiles/HUD.js'
 import Navbar from './appFiles/Navbar.js'
 import Home from './appFiles/Home.js'
+import FlowEditor from './appFiles/FlowEditor.js'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,16 +18,24 @@ const Homesite=()=>{
   return <Home />
 }
 
+const FluidFlow=()=>{
+  return <React.Fragment>
+    < FlowEditor />
+  </React.Fragment>
+}
+
 
 function App() {
-  const [showHome,setShowHome]=useState(true);
+  const [showHome,setShowHome]=useState(false);
   const [showLab,setShowLab]=useState(false);
+  const [showFlow,setShowFlow]=useState(true);
 
-  const setters=[setShowHome,setShowLab];
+  const setters=[setShowHome,setShowLab,setShowFlow];
 
   return <React.Fragment>
     <Navbar setters={setters} />
     {showHome && <Homesite />}
+    {showFlow && <FluidFlow />}
     {showLab && <WordLab />}
   </React.Fragment>
 }

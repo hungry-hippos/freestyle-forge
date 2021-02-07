@@ -4,11 +4,12 @@ import {Button} from 'react-bootstrap'
 import './Navbar.css'
 
 const Navbar=(props)=>{
-    const [setShowHome,setShowLab]=props.setters;
+    const [setShowHome,setShowLab,setShowFlow]=props.setters;
 
     const changeSite=(key)=>{
         setShowHome(false);
         setShowLab(false);
+        setShowFlow(false);
 
         //removes focus from navbar btns such that spacebar and enter wont trigger click events
         const btns=document.getElementsByClassName('navbarBtn');
@@ -23,6 +24,9 @@ const Navbar=(props)=>{
             case 'lab':
                 setShowLab(true);
                 break;
+            case 'flow':
+                setShowFlow(true);
+                break;
             default:
                 break;
         }
@@ -31,7 +35,7 @@ const Navbar=(props)=>{
         <img src={freestyleForgeLogo} alt='' id='navbarLogo'/>
         <div id='navbarBtns'>
             <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('home')}}>Home</Button>
-            <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('fluidFlow')}}>Fluid Flow</Button>
+            <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('flow')}}>Fluid Flow</Button>
             <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('lab')}}>Word Lab</Button>
         </div>
     </div>
