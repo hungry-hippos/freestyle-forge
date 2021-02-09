@@ -18,6 +18,7 @@ const FlowEditor=()=>{
                 2. On the screen above, each hot word will spawn new rhymes. Use these rhymes in your freestlye before they cross the red line.<br/>
                 3. Every time you let a rhyme cross the red line, you lose a life. You run out of lives, you are muerto.<br/>
                 4. Type GO to start game.
+                4. Type GO to start game.
             </div>
             <div className='flowVerseLine'>
                 <div className='flowWord'></div>

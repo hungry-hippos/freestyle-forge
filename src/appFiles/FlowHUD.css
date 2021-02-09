@@ -1,0 +1,63 @@
+#flowHUD{width:1200px;
+height:150px;
+background-color: white;
+border:3px solid black;
+box-sizing: border-box;
+margin:30px auto;
+font-family: 'Exo 2', sans-serif;
+position:relative;
+}
+#rootRhymesEnd{width:150px;
+background-color: black;
+color:white;
+height:100%;
+display:inline-block;
+}
+#finishEnd{background: repeating-linear-gradient(
+    45deg,
+    #ff0000,
+    #fd0000 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+width:40px;
+height:100%;
+float:right;
+}
+#rhymeLanes{position:absolute;
+left:0;
+right:0;
+top:20px;
+}
+.rhymeLane{display:block;
+width:100%;
+margin-top:10px;
+height:30px;
+position:relative;
+}
+.rootWord{float:left;
+padding:5px 10px;
+margin:0 5px;
+border-radius: 10px;
+background-color: green;
+}
+.hidden{display:none}
+
+#rhymesStack{position:absolute;
+bottom:0;
+left:0;
+}
+
+.stackPair{display: block;}
+.stackRhyme{display: inline;
+margin-right:5px;
+}
+.stackRoot{display: inline;}
+
+.runningWord{display: inline;
+font-size:25px;
+color:black;
+position:absolute;
+top:0;
+left:150px;
+}

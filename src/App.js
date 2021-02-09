@@ -4,6 +4,7 @@ import HUD from './appFiles/HUD.js'
 import Navbar from './appFiles/Navbar.js'
 import Home from './appFiles/Home.js'
 import FlowEditor from './appFiles/FlowEditor.js'
+import FlowHUD from './appFiles/FlowHUD.js'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,8 +19,11 @@ const Homesite=()=>{
   return <Home />
 }
 
+
+
 const FluidFlow=()=>{
   return <React.Fragment>
+    < FlowHUD />
     < FlowEditor />
   </React.Fragment>
 }

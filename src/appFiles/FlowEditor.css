@@ -32,9 +32,11 @@ overflow:hidden;
 .flowWord{display: inline;
 font-size:25px;
 padding:5px;
-margin:0 3px;
+margin:0 1px 0 0;
 }
 #flowInstructions{margin:0 0 20px 0;
 width:900px;
 box-sizing: border-box;
 }
+
+.bold{font-weight: bold;}
