@@ -1,9 +1,23 @@
 import React, { useEffect } from 'react'
 import freestyleLog from '../images/another.PNG'
 import wordLabImg from '../images/wordLab.PNG'
+import fluidFLowImg from '../images/fluidFlow.PNG'
 import './Home.css'
 
 const Home=()=>{
+
+    const openComponent=(type)=>{
+        switch(type){
+            case 'fluidFlow':
+                document.getElementById('navbarFlow').click();
+                break;
+            case 'wordLab':
+                document.getElementById('navbarLab').click();
+                break;
+            default:
+                break;
+        }
+    }
 
     useEffect(()=>{
 
@@ -23,7 +37,6 @@ const Home=()=>{
         })
     })
 
-
     return <React.Fragment>
         <div id='leftHalf'>
             <img src={freestyleLog} alt='' id='homeSiteLogo'/>
@@ -32,7 +45,7 @@ const Home=()=>{
             <div id='introParagraph'>
                 Forge that diction intuition, <br/>a versatile vernacular, <br/>fuel for thoughts that flow <br/>to the beat of a keyboard's <br/>freed words.
             </div>
-            <div className='appDemo'>
+            <div className='appDemo' onClick={()=>{openComponent('wordLab')}}>
                 <img src={wordLabImg} alt='' className='demoImg' />
                 <div className='carousel' id='wordLabCarousel'>
                     <div className='appDemoTitle'>WORD LAB</div>
@@ -41,12 +54,13 @@ const Home=()=>{
                     </div>
                 </div>
             </div>
-            <div className='appDemo'>
-                <img src={wordLabImg} alt='' className='demoImg' />
+            <div className='appDemo' onClick={()=>{openComponent('fluidFlow')}}>
+                <img src={fluidFLowImg} alt='' className='demoImg' />
                 <div className='carousel' id='fluidFlowCarousel'>
                     <div className='appDemoTitle'>FLUID FLOW</div>
                     <div className='appDemoBody'>
-                        SOME TEXT WILLL GO HERE
+                        Improve your improv skills by stringing rhymes under pressure. <br/><br/>
+                        We give you the rhymes, you do the rest.
                     </div>
                 </div>
             </div>

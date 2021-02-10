@@ -35,11 +35,15 @@ margin-top:10px;
 height:30px;
 position:relative;
 }
+.greenLane{color:green;}
+.blueLane{color:blue}
+.redLane{color:red}
+.bold{font-weight:bold}
 .rootWord{float:left;
 padding:5px 10px;
 margin:0 5px;
 border-radius: 10px;
-background-color: green;
+background-color: white;
 }
 .hidden{display:none}
 
@@ -56,7 +60,6 @@ margin-right:5px;
 
 .runningWord{display: inline;
 font-size:25px;
-color:black;
 position:absolute;
 top:0;
 left:150px;

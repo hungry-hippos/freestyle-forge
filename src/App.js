@@ -19,8 +19,6 @@ const Homesite=()=>{
   return <Home />
 }
 
-
-
 const FluidFlow=()=>{
   return <React.Fragment>
     < FlowHUD />
@@ -30,9 +28,9 @@ const FluidFlow=()=>{
 
 
 function App() {
-  const [showHome,setShowHome]=useState(false);
+  const [showHome,setShowHome]=useState(true);
   const [showLab,setShowLab]=useState(false);
-  const [showFlow,setShowFlow]=useState(true);
+  const [showFlow,setShowFlow]=useState(false);
 
   const setters=[setShowHome,setShowLab,setShowFlow];
 

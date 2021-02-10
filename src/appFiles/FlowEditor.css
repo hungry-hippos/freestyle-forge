@@ -16,6 +16,7 @@ overflow: hidden;
 padding:0 1px;
 width:1050px;
 height:350px;
+padding-bottom:50px;
 box-sizing: border-box;
 overflow-y: scroll;
 }
@@ -30,7 +31,7 @@ background-color: #f9f9b0;
 overflow:hidden;
 }
 .flowWord{display: inline;
-font-size:25px;
+font-size:22px;
 padding:5px;
 margin:0 1px 0 0;
 }

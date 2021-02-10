@@ -12,7 +12,7 @@ const FlowHUD=()=>{
         <div id='finishEnd'>
         </div>
     </div>
-    < div id='rhymesStack'>
+    < div id='rhymesStack' className='hidden'>
     </div>
     </React.Fragment>
 }

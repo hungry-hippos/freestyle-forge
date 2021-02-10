@@ -35,8 +35,8 @@ const Navbar=(props)=>{
         <img src={freestyleForgeLogo} alt='' id='navbarLogo'/>
         <div id='navbarBtns'>
             <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('home')}}>Home</Button>
-            <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('flow')}}>Fluid Flow</Button>
-            <Button variant='outline-light' className='navbarBtn' onClick={()=>{changeSite('lab')}}>Word Lab</Button>
+            <Button variant='outline-light' className='navbarBtn' id='navbarFlow' onClick={()=>{changeSite('flow')}}>Fluid Flow</Button>
+            <Button variant='outline-light' className='navbarBtn' id='navbarLab' onClick={()=>{changeSite('lab')}}>Word Lab</Button>
         </div>
     </div>
 }

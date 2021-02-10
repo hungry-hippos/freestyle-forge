@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
 import keyboardFunctionalityWordLab from './keyboardFunctionalityWordLab'
+import keyboardFunctionalityFlow from './keyboardFunctionalityFlow'
+import gameFunctionality from './gameFunctionality'
 import './TextEditor.css'
 
 const TextEditor=()=>{
     useEffect(()=>{
 
-        //removes keypress event listener from window then adds to prevent double functionality
+        gameFunctionality.resetEverything();
         window.removeEventListener('keydown',keyboardFunctionalityWordLab);
+        window.removeEventListener('keydown',keyboardFunctionalityFlow);
+
+
+        //removes keypress event listener from window then adds to prevent double functionality
         window.addEventListener('keydown',keyboardFunctionalityWordLab);
         
     })
