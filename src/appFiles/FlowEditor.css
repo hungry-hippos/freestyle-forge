@@ -1,3 +1,15 @@
+
+#flowStartBtn{font-size:30px;
+padding:10px 20px;
+}
+#instructions{display:block;
+margin:50px auto;
+font-size:30px;
+font-family: 'Exo 2', sans-serif;
+text-align: center;
+height:50px;
+box-sizing: border-box;
+}
 #flowEditorMain{display: block;
 margin: 50px auto;
 background-color:#f9f9b0;
@@ -34,10 +46,6 @@ overflow:hidden;
 font-size:22px;
 padding:5px;
 margin:0 1px 0 0;
-}
-#flowInstructions{margin:0 0 20px 0;
-width:900px;
-box-sizing: border-box;
 }
 
 .bold{font-weight: bold;}

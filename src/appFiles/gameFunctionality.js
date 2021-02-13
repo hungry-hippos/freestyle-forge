@@ -1,4 +1,6 @@
 import verseBank from './verseBank.js'
+import keyboardFunctionalityFlow from './keyboardFunctionalityFlow.js'
+
 
 var gameFunctionality={
     isWordsMoving:false,
@@ -11,29 +13,43 @@ var gameFunctionality={
         return allWords[allWords.length-1].textContent;
     },
     typeFirstVerse(){
+        const num=Math.round(Math.random()*(verseBank.length-1));
+        gameFunctionality.firstVerse=verseBank[num];
+
         gameFunctionality.intervalCode=setInterval(()=>{
             while(gameFunctionality.firstVerseChar<gameFunctionality.firstVerse.length){
-                if (gameFunctionality.firstVerse[gameFunctionality.firstVerseChar]===" "){
-                    const evt = new KeyboardEvent('keydown', {code:"Space"}); 
-                    window.dispatchEvent(evt);
-                }else{
-                    const evt = new KeyboardEvent('keydown', {key:gameFunctionality.firstVerse[gameFunctionality.firstVerseChar]}); 
-                    window.dispatchEvent(evt);
+                const char=gameFunctionality.firstVerse[gameFunctionality.firstVerseChar];
+                if (char===" "){
+                    const word=document.createElement('div');
+                    word.classList.add('flowWord');
+                    const lines=document.getElementsByClassName('flowVerseLine');
+                    lines[lines.length-1].appendChild(word);
+                }else {
+                    const words=document.getElementsByClassName('flowWord');
+                    words[words.length-1].textContent=words[words.length-1].textContent+char;
                 }
                 
                 gameFunctionality.firstVerseChar++;
                 break; 
             }
             if (gameFunctionality.firstVerseChar==gameFunctionality.firstVerse.length){
-                var evt = new KeyboardEvent('keydown', {code:'Enter'}); 
-                window.dispatchEvent(evt);
+                const line=document.createElement('div');
+                line.classList.add('flowVerseLine');
+                const word=document.createElement('div');
+                word.classList.add('flowWord');
+                line.appendChild(word);
+                document.getElementById('flowPageBody').appendChild(line);
                 clearInterval(gameFunctionality.intervalCode);
                 gameFunctionality.firstVerseChar=0;
-                gameFunctionality.getRootRhymes(); 
+                gameFunctionality.getRootRhymes();
+                
+                //load window event listeners for keydown
+                document.getElementById('instructionsText').classList.remove('hidden');
+                window.addEventListener('keydown',keyboardFunctionalityFlow);
+                gameFunctionality.loadListener();
+                gameFunctionality.startWordSpawnInterval();
             }
         },50)
-        
-        
     },
     eraseLastWord(){
         var allWords=document.getElementsByClassName('flowWord');
@@ -256,16 +272,6 @@ var gameFunctionality={
     },
     listener(event){
         const lastWord=gameFunctionality.getLastWord();
-        if (lastWord==='LOAD'){
-            gameFunctionality.eraseLastWord();
-            const num=Math.round(Math.random()*(verseBank.length-1));
-            gameFunctionality.firstVerse=verseBank[num];
-            gameFunctionality.typeFirstVerse();
-        }
-        if (lastWord==='GO'){
-            gameFunctionality.eraseLastWord();
-            gameFunctionality.startWordSpawnInterval();
-        }
         const runningWords=document.getElementsByClassName('runningWord');
         for (var i=0;i<runningWords.length;i++){
             if (lastWord===runningWords[i].textContent){
@@ -279,9 +285,6 @@ var gameFunctionality={
                 runningWords[i].remove();
             }
         }
-
-
-        
     },
     loadListener(){
         window.addEventListener('keydown',gameFunctionality.listener);

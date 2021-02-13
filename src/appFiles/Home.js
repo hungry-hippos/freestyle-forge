@@ -43,7 +43,7 @@ const Home=()=>{
         </div>
         <div id='rightHalf'>
             <div id='introParagraph'>
-                Forge that diction intuition, <br/>a versatile vernacular, <br/>fuel for thoughts that flow <br/>to the beat of a keyboard's <br/>freed words.
+                Forge that diction intuition, <br/>a versatile vernacular, <br/>fuel for thoughts that flow <br/>to the beat of a keyboard's free words.
             </div>
             <div className='appDemo' onClick={()=>{openComponent('wordLab')}}>
                 <img src={wordLabImg} alt='' className='demoImg' />

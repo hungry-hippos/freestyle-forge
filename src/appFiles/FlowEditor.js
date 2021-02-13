@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import {Button} from 'react-bootstrap'
 import keyboardFunctionalityFlow from './keyboardFunctionalityFlow.js'
 import keyboardFunctionalityWordLab from './keyboardFunctionalityWordLab.js'
 import gameFunctionality from './gameFunctionality'
@@ -7,7 +8,12 @@ import './FlowEditor.css'
 
 const FlowEditor=()=>{
 
+    const typeFirstVerse=()=>{
+        document.getElementById('flowStartBtnDiv').classList.add('hidden');
 
+        //types the first verse, then loads keydown event listeners on window
+        gameFunctionality.typeFirstVerse();
+    }
     
     useEffect(()=>{
 
@@ -15,23 +21,25 @@ const FlowEditor=()=>{
         window.removeEventListener('keydown',keyboardFunctionalityWordLab);
         window.removeEventListener('keydown',keyboardFunctionalityFlow);
 
-
-        window.addEventListener('keydown',keyboardFunctionalityFlow);
-        gameFunctionality.loadListener();
     })
-    return <div id='flowEditorMain'>
-        <div id='flowPageBody'>
-            <div id='flowInstructions'>
-                <span style={{fontWeight:'bold',display:'block',fontSize:'25px'}}>INSTRUCTIONS</span>
-                1. Type LOAD to load first verse and root rhymes. <br/>
-                2. On the screen above, each root rhyme will spawn new rhymes. Use these rhymes in your freestlye before they cross the red line.<br/>
-                3. Type GO to start game.
+    return <React.Fragment>
+        <div id='instructions'>
+            <div id='flowStartBtnDiv'>
+                <Button onClick={typeFirstVerse} variant='dark' id='flowStartBtn'>START</Button>
             </div>
-            <div className='flowVerseLine'>
-                <div className='flowWord'></div>
+            <span id='instructionsText' className='hidden'>
+                Start typing your freestyle. <br/>
+                We feed you the rhymes, you string them together.
+            </span>
+        </div>
+        <div id='flowEditorMain'>
+            <div id='flowPageBody'>
+                <div className='flowVerseLine'>
+                    <div className='flowWord'></div>
+                </div>
             </div>
         </div>
-    </div>
+    </React.Fragment>
 }
 
 

@@ -5,6 +5,8 @@ box-sizing: border-box;
 display: inline-block;
 position:fixed;
 top:0px;
+bottom:0;
+left:0;
 }
 
 #homeSiteLogo{height:500px;
@@ -13,23 +15,22 @@ display:block;
 margin:0 auto 100px auto;
 }
 
-#rightHalf{float:right;
-width:50%;
-height:1100px;
-padding-bottom: 100px;
-box-sizing: border-box;
+#rightHalf{position:absolute;
+top:0;
+bottom:-250px;
+right:0;
+width:51%;
 background-color: white;
 }
 
-#introParagraph{width:400px;
-font-size:30px;
+#introParagraph{width:550px;
+font-size:25px;
 font-family: 'Exo 2', sans-serif;
 color:black;
 text-align: left;
 line-height:2;
-margin:100px 90px 300px 90px;
+margin:100px 90px 100px 90px;
 }
-
 
 .appDemo{width:568.5px;
 height:120px;
