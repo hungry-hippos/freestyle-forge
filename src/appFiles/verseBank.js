@@ -5,7 +5,8 @@ const verseBank=[
     "I spit like an M16, let them all know they can have it",
     "My flow is magic, can't catch it, it's classic, can't be contained",
     "What goes around comes around like the blades on a chainsaw",
-    "When the thought of being thrown into an alligator pit, I salivate at it"
+    "When the thought of being thrown into an alligator pit, I salivate at it",
+    "The world's largest orange is actually a clementine"
 ]
 
 export default verseBank
