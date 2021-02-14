@@ -161,7 +161,11 @@ var gameFunctionality={
     getRootRhymes(){
         var longWords=gameFunctionality.getLongWords();
         longWords=gameFunctionality.shuffleArr(longWords);
+        console.log(longWords);
         for (var i=0;i<longWords.length;i++){
+            if (longWords[i].classList.contains('bold'))
+                continue;
+
             gameFunctionality.getAPIData("rhyme",longWords[i]);                
         }
     },
@@ -268,7 +272,7 @@ var gameFunctionality={
 
                 gameFunctionality.moveFromStackToLane();
             },num)
-        },3000)
+        },5000)
     },
     listener(event){
         const lastWord=gameFunctionality.getLastWord();

@@ -23,7 +23,7 @@ const FlowEditor=()=>{
 
     })
     return <React.Fragment>
-        <div id='instructions'>
+        <div id='flowInstructions'>
             <div id='flowStartBtnDiv'>
                 <Button onClick={typeFirstVerse} variant='dark' id='flowStartBtn'>START</Button>
             </div>
