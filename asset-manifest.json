@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/freestyle-forge/static/css/main.321b4da7.chunk.css",
-    "main.js": "/freestyle-forge/static/js/main.3f8459bc.chunk.js",
-    "main.js.map": "/freestyle-forge/static/js/main.3f8459bc.chunk.js.map",
+    "main.js": "/freestyle-forge/static/js/main.3ab94682.chunk.js",
+    "main.js.map": "/freestyle-forge/static/js/main.3ab94682.chunk.js.map",
     "runtime-main.js": "/freestyle-forge/static/js/runtime-main.dbcb7a27.js",
     "runtime-main.js.map": "/freestyle-forge/static/js/runtime-main.dbcb7a27.js.map",
     "static/css/2.150d169a.chunk.css": "/freestyle-forge/static/css/2.150d169a.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.0cc0f307.chunk.js",
     "static/css/main.321b4da7.chunk.css",
-    "static/js/main.3f8459bc.chunk.js"
+    "static/js/main.3ab94682.chunk.js"
   ]
 }
