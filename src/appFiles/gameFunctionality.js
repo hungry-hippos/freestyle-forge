@@ -10,7 +10,7 @@ var gameFunctionality={
     moveIntervalCode:0,
     getLastWord(){
         const allWords=document.getElementsByClassName('flowWord');
-        return allWords[allWords.length-1].textContent;
+        return allWords[allWords.length-1].textContent.toLowerCase();
     },
     typeFirstVerse(){
         const num=Math.round(Math.random()*(verseBank.length-1));

@@ -39,3 +39,5 @@ font-weight: 500;
 
 #instructions{margin:0 auto 20px auto;
 }
+
+.clickedLine{box-shadow: 0 0 3px 3px black;}

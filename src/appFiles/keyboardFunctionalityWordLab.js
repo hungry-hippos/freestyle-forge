@@ -360,7 +360,7 @@ const getWordAndSendAPIReq=(event)=>{
         event.target.classList.remove('italic');
     })
 
-    const word=event.target.textContent;
+    const word=event.target.textContent.toLowerCase();
     hideAllShruggers();
     getRhymesFromAPI(word);
     getSpelledLikeFromAPI(word);
@@ -389,7 +389,7 @@ const keyboardFunctionalityWordLab=(event)=>{
     //loading API functionality to first word
     document.getElementsByClassName('word')[0].addEventListener('mouseenter',getWordAndSendAPIReq);
 
-    if (event.key==='Shift' || event.key==='CapsLock' || event.key==="ArrowLeft" || event.key==="ArrowRight" || event.key==="ArrowUp" || event.key==="ArrowDown"){
+    if (event.key.length>1 && event.key!=='Enter' && event.key!=='Space' && event.key!=='Backspace'){
         return;
     }
 
@@ -404,13 +404,20 @@ const keyboardFunctionalityWordLab=(event)=>{
             return;
         }
 
+        var clickedLines=document.getElementsByClassName('clickedLine');
+        while (clickedLines.length>0){
+            clickedLines[0].classList.remove('clickedLine');
+        }
+
         const line=document.createElement('div');
         line.classList.add('verseLine');
+        line.classList.add('clickedLine');
         const word=document.createElement('div');
         word.classList.add('word');
         word.addEventListener('mouseenter',getWordAndSendAPIReq);
         line.appendChild(word);
         document.getElementById('pageBody').appendChild(line);
+        
 
         window.scrollTo(0,document.body.scrollHeight);
         return;
@@ -463,6 +470,7 @@ const keyboardFunctionalityWordLab=(event)=>{
             if (allLines.length>1 && lastLineChildren.length===0){
                 allLines[allLines.length-1].remove();
             }
+            allLines[allLines.length-1].classList.add('clickedLine');
         }else{
             lastWord.textContent=reducedWord;
         }

@@ -1,7 +1,7 @@
 
 const keyboardFunctionalityFlow=(event)=>{
 
-    if (event.key==='Shift' || event.key==='CapsLock' || event.key==="ArrowLeft" || event.key==="ArrowRight" || event.key==="ArrowUp" || event.key==="ArrowDown"){
+    if (event.key.length>1 && event.key!=='Enter' && event.key!=='Space' && event.key!=='Backspace'){
         return;
     }
 

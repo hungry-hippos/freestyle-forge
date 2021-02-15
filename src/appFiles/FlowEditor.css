@@ -1,20 +1,29 @@
 
-#flowStartBtn{font-size:30px;
-padding:10px 20px;
+#scrollUpArrow{display: block;
+    background-color: #929292a1;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
-#flowInstructions{display:block;
-margin:50px auto;
-font-size:30px;
-font-family: 'Exo 2', sans-serif;
-text-align: center;
-height:50px;
-box-sizing: border-box;
+#scrollUpArrow:hover{font-size:25px;
+}
+#scrollDownArrow{display: block;
+    position: absolute;
+    background-color: #929292a1;
+    bottom: 0;
+    left:0;
+    right:0;
+    text-align: center;
+}
+#scrollDownArrow:hover{font-size:25px;
 }
 #flowEditorMain{display: block;
 margin: 50px auto;
 background-color:#f9f9b0;
 width:1000px;
-height:400px;
+height:250px;
 box-sizing: border-box;
 padding:50px;
 font-size: 20px;
@@ -23,14 +32,16 @@ box-shadow: 0 0 5px black;
 font-family: 'Exo 2', sans-serif;
 transition:.5s;
 overflow: hidden;
+position:relative;
 }
 #flowPageBody{display: block;
 padding:0 1px;
 width:1050px;
-height:350px;
+height:200px;
 padding-bottom:50px;
 box-sizing: border-box;
 overflow-y: scroll;
+scroll-behavior: smooth;
 }
 .flowVerseLine{display: block;
 width:900px;
@@ -38,9 +49,9 @@ height:50px;
 box-sizing: border-box;
 margin:0;
 padding-top:7px;
-border:thin solid black;
 background-color: #f9f9b0;
 overflow:hidden;
+border:1px solid black;
 }
 .flowWord{display: inline;
 font-size:22px;

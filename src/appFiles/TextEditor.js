@@ -24,7 +24,7 @@ const TextEditor=()=>{
             3. Hover your mouse over any word you've typed to get its rhymes.
         </div>
         <div id='pageBody'>
-            <div className='verseLine'>
+            <div className='verseLine' onClick={(e)=>{e.target.classList.add('clickedLine')}}>
                 <div className='word'></div>
             </div>
         </div>

@@ -1,19 +1,12 @@
 import React, { useEffect } from 'react'
-import {Button} from 'react-bootstrap'
 import keyboardFunctionalityFlow from './keyboardFunctionalityFlow.js'
 import keyboardFunctionalityWordLab from './keyboardFunctionalityWordLab.js'
 import gameFunctionality from './gameFunctionality'
+import {IoIosArrowDropup,IoIosArrowDropdown} from 'react-icons/io'
 
 import './FlowEditor.css'
 
 const FlowEditor=()=>{
-
-    const typeFirstVerse=()=>{
-        document.getElementById('flowStartBtnDiv').classList.add('hidden');
-
-        //types the first verse, then loads keydown event listeners on window
-        gameFunctionality.typeFirstVerse();
-    }
     
     useEffect(()=>{
 
@@ -21,23 +14,26 @@ const FlowEditor=()=>{
         window.removeEventListener('keydown',keyboardFunctionalityWordLab);
         window.removeEventListener('keydown',keyboardFunctionalityFlow);
 
+        //scrolling functionality on arrows
+        document.getElementById('scrollUpArrow').addEventListener('mouseenter',()=>{
+            var objDiv = document.getElementById('flowPageBody');
+            objDiv.scrollTop = 0;
+        })
+        document.getElementById('scrollDownArrow').addEventListener('mouseenter',()=>{
+            var objDiv = document.getElementById('flowPageBody');
+            objDiv.scrollTop = objDiv.scrollHeight;
+        })
+
     })
     return <React.Fragment>
-        <div id='flowInstructions'>
-            <div id='flowStartBtnDiv'>
-                <Button onClick={typeFirstVerse} variant='dark' id='flowStartBtn'>START</Button>
-            </div>
-            <span id='instructionsText' className='hidden'>
-                Start typing your freestyle. <br/>
-                We feed you the rhymes, you string them together.
-            </span>
-        </div>
         <div id='flowEditorMain'>
+            <div id='scrollUpArrow'><IoIosArrowDropup /></div>
             <div id='flowPageBody'>
                 <div className='flowVerseLine'>
                     <div className='flowWord'></div>
                 </div>
             </div>
+            <div id='scrollDownArrow'><IoIosArrowDropdown /></div>
         </div>
     </React.Fragment>
 }

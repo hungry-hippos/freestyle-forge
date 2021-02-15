@@ -1,17 +1,32 @@
+#flowStartBtn{font-size:30px;
+padding:10px 20px;
+box-shadow: 0 0 5px black;
+}
+#flowInstructions{display:block;
+margin:50px auto;
+font-size:30px;
+font-family: 'Exo 2', sans-serif;
+text-align: center;
+height:50px;
+box-sizing: border-box;
+}
+
 #flowHUD{width:1200px;
 height:150px;
 background-color: white;
 border:3px solid black;
 box-sizing: border-box;
-margin:30px auto;
+margin:50px auto 30px auto;
 font-family: 'Exo 2', sans-serif;
 position:relative;
 }
-#rootRhymesEnd{width:150px;
-background-color: black;
-color:white;
-height:100%;
-display:inline-block;
+#rootRhymesEnd{    width: 150px;
+  background-color: black;
+  color: white;
+  height: 102%;
+  position: relative;
+  top: -2px;
+  display: inline-block;
 }
 #finishEnd{background: repeating-linear-gradient(
     45deg,
