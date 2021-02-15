@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/freestyle-forge/static/css/main.321b4da7.chunk.css",
-    "main.js": "/freestyle-forge/static/js/main.3ab94682.chunk.js",
-    "main.js.map": "/freestyle-forge/static/js/main.3ab94682.chunk.js.map",
-    "runtime-main.js": "/freestyle-forge/static/js/runtime-main.dbcb7a27.js",
-    "runtime-main.js.map": "/freestyle-forge/static/js/runtime-main.dbcb7a27.js.map",
+    "main.css": "/freestyle-forge/static/css/main.b48ffee2.chunk.css",
+    "main.js": "/freestyle-forge/static/js/main.22a0ef0c.chunk.js",
+    "main.js.map": "/freestyle-forge/static/js/main.22a0ef0c.chunk.js.map",
+    "runtime-main.js": "/freestyle-forge/static/js/runtime-main.1f1ac2a6.js",
+    "runtime-main.js.map": "/freestyle-forge/static/js/runtime-main.1f1ac2a6.js.map",
     "static/css/2.150d169a.chunk.css": "/freestyle-forge/static/css/2.150d169a.chunk.css",
-    "static/js/2.0cc0f307.chunk.js": "/freestyle-forge/static/js/2.0cc0f307.chunk.js",
-    "static/js/2.0cc0f307.chunk.js.map": "/freestyle-forge/static/js/2.0cc0f307.chunk.js.map",
-    "static/js/3.fda4aca5.chunk.js": "/freestyle-forge/static/js/3.fda4aca5.chunk.js",
-    "static/js/3.fda4aca5.chunk.js.map": "/freestyle-forge/static/js/3.fda4aca5.chunk.js.map",
+    "static/js/2.8c116f0d.chunk.js": "/freestyle-forge/static/js/2.8c116f0d.chunk.js",
+    "static/js/2.8c116f0d.chunk.js.map": "/freestyle-forge/static/js/2.8c116f0d.chunk.js.map",
+    "static/js/3.d405725d.chunk.js": "/freestyle-forge/static/js/3.d405725d.chunk.js",
+    "static/js/3.d405725d.chunk.js.map": "/freestyle-forge/static/js/3.d405725d.chunk.js.map",
     "index.html": "/freestyle-forge/index.html",
     "static/css/2.150d169a.chunk.css.map": "/freestyle-forge/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.321b4da7.chunk.css.map": "/freestyle-forge/static/css/main.321b4da7.chunk.css.map",
-    "static/js/2.0cc0f307.chunk.js.LICENSE.txt": "/freestyle-forge/static/js/2.0cc0f307.chunk.js.LICENSE.txt",
+    "static/css/main.b48ffee2.chunk.css.map": "/freestyle-forge/static/css/main.b48ffee2.chunk.css.map",
+    "static/js/2.8c116f0d.chunk.js.LICENSE.txt": "/freestyle-forge/static/js/2.8c116f0d.chunk.js.LICENSE.txt",
     "static/media/another.00798a05.PNG": "/freestyle-forge/static/media/another.00798a05.PNG",
     "static/media/fluidFlow.4eca1092.PNG": "/freestyle-forge/static/media/fluidFlow.4eca1092.PNG",
     "static/media/sidewaysGold.e4d8b74e.PNG": "/freestyle-forge/static/media/sidewaysGold.e4d8b74e.PNG",
     "static/media/wordLab.5411b181.PNG": "/freestyle-forge/static/media/wordLab.5411b181.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.dbcb7a27.js",
+    "static/js/runtime-main.1f1ac2a6.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.0cc0f307.chunk.js",
-    "static/css/main.321b4da7.chunk.css",
-    "static/js/main.3ab94682.chunk.js"
+    "static/js/2.8c116f0d.chunk.js",
+    "static/css/main.b48ffee2.chunk.css",
+    "static/js/main.22a0ef0c.chunk.js"
   ]
 }
