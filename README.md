@@ -1,70 +1,7 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1>THE FREESTYLE FORGE!</h1>
+Welcome! Of all the apps I've developed, I had the most fun on this one. It's simple. It's fun. It's mildly useful. There are two main components on this app: Fluid Flow and Word Lab. Both use very similar functions, relying on the DataMuse API. <br/>
+Stack used: HTML/CSS/JS, React, DataMuse API. <br/><br/>
+<h3>Word Lab</h3>
+The user types input. A keyboard event listener listens for valid keys (lexical chars) and appends them to the last word on the editor using divs. When the user presses the spacebar, the most recent word is extracted and an API request to DataMuse is sent containing that word plus the selected data (rhymes, approx rhymes, synonyms, etc.). The response is then parsed and presented neatly in the overhead HUD. The same process happens when the user hovers over any word: the hovered word is extracted and the API request is sent.<br/><br/>
+<h3>Fluid Flow</h3>
+When the user clicks Start, a random verse from a verseBank is loaded. Immediately afterwards, the verse is parsed and all 4+ letter words are extracted and stored in an array. For each extracted 4+ letter word, an API requests to DataMuse is sent. If the response contains less than 7 rhymes, the selected word is skipped and a new word is chosen until 3 words have been found. These words are then displayed as Root Rhymes. Their respective rhymes and shuffled and stored in a stack. On random intervals between 4-7 seconds, rhymes are popped from the stack and displayed across the screen. When the stack empties, all input text is parsed, looking for 4+ letter words that have not been used as rhymes previously (to prevent recycling of used words), API requests are sent until 3 Root Rhymes are found, and the cycle repeats.   
