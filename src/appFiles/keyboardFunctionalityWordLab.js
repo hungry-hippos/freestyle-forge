@@ -404,10 +404,16 @@ const keyboardFunctionalityWordLab=(event)=>{
             return;
         }
 
+        //toggling clicking on lines
         var clickedLines=document.getElementsByClassName('clickedLine');
         while (clickedLines.length>0){
             clickedLines[0].classList.remove('clickedLine');
         }
+
+        //fetching data for last word
+        const words=document.getElementsByClassName('word');
+        var lastWordText=words[words.length-1].textContent;
+        sendAPIReq(lastWordText);
 
         const line=document.createElement('div');
         line.classList.add('verseLine');
