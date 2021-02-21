@@ -1,0 +1,23 @@
+#tutorialDiv{position:absolute;
+    top:20%;
+    left:30%;
+    z-index: 200;
+    background-color: #5e7aa9;
+    border-radius: 10px;
+    padding:0;
+    }
+    #tutorialHeader{font-size:40px;
+    font-family:'Exo 2';
+    text-align: center;
+    }
+    #tutorialBackgroundDimmer{position:absolute;
+    top:0;
+    left:0;
+    height:120%;
+    width:100%;
+    background-color: #000000c4;
+    z-index:100;}
+    #closeTutorial{float:right;
+    margin:10px 15px 0 0;
+    }
+    #closeTutorial:hover{cursor:pointer}

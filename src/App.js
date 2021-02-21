@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TextEditor from './appFiles/TextEditor.js'
 import HUD from './appFiles/HUD.js'
 import Navbar from './appFiles/Navbar.js'
 import Home from './appFiles/Home.js'
 import FlowEditor from './appFiles/FlowEditor.js'
 import FlowHUD from './appFiles/FlowHUD.js'
+import VideoDemo from './appFiles/VideoDemo'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 const WordLab=()=>{
   return <React.Fragment>
+    < VideoDemo videoName="wordLab" />
     < HUD />
     < TextEditor />
   </React.Fragment>
@@ -21,6 +25,7 @@ const Homesite=()=>{
 
 const FluidFlow=()=>{
   return <React.Fragment>
+    < VideoDemo videoName="fluidFlow" />
     < FlowHUD />
     < FlowEditor />
   </React.Fragment>
